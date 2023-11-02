@@ -1,5 +1,6 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import { AppService } from './app.service';
+import { SubscribeDto } from './subscribe.dto';
 
 @Controller()
 export class AppController {
@@ -11,7 +12,7 @@ export class AppController {
   }
 
   @Post()
-  subscribeEmail(@Body() params: { email: string }): string {
-    return `subscribed ${params.email}, welcome.`;
+  subscribeEmail(@Body() subscribeDto: SubscribeDto): string {
+    return `subscribed ${subscribeDto.email}, welcome.`;
   }
 }
