@@ -11,7 +11,7 @@ export class AppController {
   }
 
   @Post()
-  subscribeEmail(@Body() email: string): string {
-    return `subscribed ${email}, welcome.`;
+  subscribeEmail(@Body() params: { email: string }): string {
+    return `subscribed ${params.email}, welcome.`;
   }
 }
